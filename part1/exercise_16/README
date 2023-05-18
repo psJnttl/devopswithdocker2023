@@ -1,0 +1,18 @@
+Heroku has good getting started guide on using Docker containers. I took the Dockerfile, 
+made some minor modifications. Then I did small Lottonumbers App, so it wouldn't just be 
+a Hello World. Development was done locally till the App worked. The difference in Heroku 
+is that it provides the port number, it can't be static.
+
+Once Dockerfile and App were tested I pushed it to Heroku. Oh yeah, had to enter credit card 
+info before I could create new app to Heroku.
+
+> heroku container:login
+> heroku create
+Creating app... done, ⬢ secure-lowlands-96933
+https://secure-lowlands-96933.herokuapp.com/ | https://git.heroku.com/secure-lowlands-96933.git
+
+> heroku container:push web --app secure-lowlands-96933
+> heroku container:release web --app secure-lowlands-96933
+
+The App can be found at:
+https://secure-lowlands-96933.herokuapp.com/

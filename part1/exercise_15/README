@@ -1,0 +1,7 @@
+The cli_clock app prints time once a second in terminal window. Runs on perpetual loop. Stopping requires
+attaching from other terminal or with Docker Desktop.
+
+Docker Hub address: https://hub.docker.com/repository/docker/equinetion/cli_clock/general
+
+Run the app with command:
+> docker run -t equinetion/cli_clock

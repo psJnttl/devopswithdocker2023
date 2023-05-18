@@ -1,0 +1,26 @@
+Container is started in 1st terminal.
+----------
+> docker run -it --name exec_1_4 ubuntu sh -c "while true; do echo 'Input website:'; read website; echo 'Searching..'; sleep 1; curl http://$website; done"
+Input website:
+helsinki.fi
+Searching..
+sh: 1: curl: not found
+----------
+Container is accessed from 2nd terminal and curl is installed.
+----------
+> docker exec -it exec_1_4 bash
+root@f013073fc4f7:/# apt-get update
+root@f013073fc4f7:/# apt-get -y install curl
+----------
+Now the app works on 1st terminal.
+----------
+Input website:
+helsinki.fi
+Searching..
+<html>
+<head><title>301 Moved Permanently</title></head>
+<body>
+<center><h1>301 Moved Permanently</h1></center>
+<hr><center>nginx/1.20.1</center>
+</body>
+</html>

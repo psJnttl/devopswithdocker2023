@@ -1,0 +1,19 @@
+> docker run -d --name intense_fabulist devopsdockeruh/simple-web-service:ubuntu
+2a71b1cad067024f630d41c75c185788807d1e8a40716b6fcb617f73ed3404e2
+
+> docker exec -it intense_fabulist bash
+root@2a71b1cad067:/usr/src/app# tail -f ./text.log
+2023-03-15 17:09:39 +0000 UTC
+2023-03-15 17:09:41 +0000 UTC
+2023-03-15 17:09:43 +0000 UTC
+2023-03-15 17:09:45 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2023-03-15 17:09:47 +0000 UTC
+2023-03-15 17:09:49 +0000 UTC
+2023-03-15 17:09:51 +0000 UTC
+2023-03-15 17:09:53 +0000 UTC
+2023-03-15 17:09:55 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2023-03-15 17:09:57 +0000 UTC
+2023-03-15 17:09:59 +0000 UTC
+^C

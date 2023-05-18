@@ -1,0 +1,22 @@
+> docker pull devopsdockeruh/simple-web-service:alpine
+> docker pull devopsdockeruh/simple-web-service:ubuntu
+> docker image ls -a
+REPOSITORY                          TAG       IMAGE ID       CREATED       SIZE
+devopsdockeruh/simple-web-service   ubuntu    4e3362e907d5   2 years ago   83MB
+devopsdockeruh/simple-web-service   alpine    fd312adc88e0   2 years ago   15.7MB
+
+> docker run -d --name intense_fabulist devopsdockeruh/simple-web-service:alpine
+6e531c1af1dd00172e3e3968e78687c116d698aec95ed83d71bdfd4517298795
+
+> docker exec -it intense_fabulist sh
+/usr/src/app # tail -f ./text.log
+2023-03-16 14:01:00 +0000 UTC
+2023-03-16 14:01:02 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2023-03-16 14:01:04 +0000 UTC
+2023-03-16 14:01:06 +0000 UTC
+2023-03-16 14:01:08 +0000 UTC
+2023-03-16 14:01:10 +0000 UTC
+2023-03-16 14:01:12 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2023-03-16 14:01:14 +0000 UTC

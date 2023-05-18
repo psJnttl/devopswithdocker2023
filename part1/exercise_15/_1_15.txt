@@ -1,0 +1,49 @@
+> docker build . -t cli_clock
+> docker run -it cli_clock
+-----
+> docker run -t cli_clock
+2023-03-27 14:29:14
+2023-03-27 14:29:15
+2023-03-27 14:29:16
+2023-03-27 14:29:17
+2023-03-27 14:29:18
+2023-03-27 14:29:19
+
+> docker login
+Authenticating with existing credentials...
+Login Succeeded
+
+Logging in with your password grants your terminal complete access to your account.
+For better security, log in with a limited-privilege personal access token. Learn more at https://docs.docker.com/go/access-tokens/
+
+# rename the image to include your username
+> docker tag cli_clock equinetion/cli_clock
+# images listalla "cli_clock" lisäksi ilmaantuu "equinetion/cli_clock"
+
+# push it
+> docker push equinetion/cli_clock
+Using default tag: latest
+The push refers to repository [docker.io/equinetion/cli_clock]
+66cef0124e49: Pushed
+4f61e6c0ecc3: Pushed
+5f70bf18a086: Mounted from devopsdockeruh/simple-web-service
+b7e0fa7bfe7f: Mounted from equinetion/youtube-dl
+latest: digest: sha256:33fb578d36efde9e00a5803242aed9d195c14d143577f4b42e46368486cd1106 size: 1154
+
+# Image näkyy hubissa  https://hub.docker.com/repository/docker/equinetion/cli_clock/general
+
+# Ajo jatkossa. Ensin veke image listalta jotta oikeasti hakee hubista.
+> docker run -t equinetion/cli_clock
+Unable to find image 'equinetion/cli_clock:latest' locally
+latest: Pulling from equinetion/cli_clock
+0c5227665c11: Already exists
+4f4fb700ef54: Already exists
+ec050fb77a37: Already exists
+b4649d846722: Already exists
+Digest: sha256:33fb578d36efde9e00a5803242aed9d195c14d143577f4b42e46368486cd1106
+Status: Downloaded newer image for equinetion/cli_clock:latest
+2023-03-27 15:24:03
+2023-03-27 15:24:04
+2023-03-27 15:24:05
+2023-03-27 15:24:06
+2023-03-27 15:24:07
