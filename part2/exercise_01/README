@@ -1,0 +1,1 @@
+On Windows had to create on host .\logs\text.log empty file or the file mount won't work.

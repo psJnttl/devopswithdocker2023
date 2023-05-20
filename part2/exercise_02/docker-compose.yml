@@ -1,0 +1,7 @@
+version: '3.8'
+services:
+  simple-webb-service:
+    image: devopsdockeruh/simple-web-service:ubuntu
+    ports:
+    - 8080:8080 
+    command: server

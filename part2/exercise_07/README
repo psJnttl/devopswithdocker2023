@@ -1,0 +1,3 @@
+Bind volume with long syntax requires that the source folder "./database" must 
+exist on the host machine. It won't be created on-demand. There's a Note about 
+this in the documentation: https://docs.docker.com/compose/compose-file/compose-file-v3/#volumes

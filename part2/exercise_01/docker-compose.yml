@@ -1,0 +1,8 @@
+version: '3.8'
+services:
+  simple-webb-service:
+    image: devopsdockeruh/simple-web-service:ubuntu
+    volumes:
+      - type: bind
+        source: ./logs/text.log
+        target: /usr/src/app/text.log

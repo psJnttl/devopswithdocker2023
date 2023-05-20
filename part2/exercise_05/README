@@ -1,0 +1,5 @@
+This is plenty computing power:
+> docker compose up -d --scale compute=5
+
+However, it turns out two compute containers is enough.
+> docker compose up -d --scale compute=2

@@ -1,0 +1,6 @@
+
+Needed changes:
+
+Front-end Dockerfile, the ENV "REACT_APP_BACKEND_URL" from value "http://localhost:8080/" to http://localhost/api/
+
+On back-end Dockerfile the ENV "REQUEST_ORIGIN" is no longer needed due to reverse proxy.

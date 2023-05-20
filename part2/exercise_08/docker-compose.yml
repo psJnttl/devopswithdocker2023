@@ -1,0 +1,51 @@
+version: '3.8'
+services:
+  reverse-proxy:
+    image: nginx:1.23.4-alpine
+    depends_on:
+      - back-end
+    ports:
+      - 80:80
+    volumes:
+      - type: bind
+        source: ./nginx.conf
+        target: /etc/nginx/nginx.conf
+  front-end:
+    build: ./frontend/
+    ports:
+      - 5000:5000 
+
+  back-end:
+    build: ./backend/
+    ports:
+      - 8080:8080
+    depends_on:
+      data-base:
+        condition: service_healthy  
+    environment:
+      - REDIS_HOST=redis-cache
+      - POSTGRES_HOST=data-base
+      - POSTGRES_USER=the_user
+      - POSTGRES_PASSWORD=really_simple_password
+      - POSTGRES_DATABASE=container_exercises
+  redis-cache:
+    image: redis:6.2-alpine
+
+  data-base:
+    image: postgres:13.2-alpine
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=the_user
+      - POSTGRES_PASSWORD=really_simple_password
+      - POSTGRES_DB=container_exercises
+    container_name: postgres_db
+    volumes:
+      - type: bind
+        source: ./database
+        target: /var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready", "-d", "container_exercises"]
+      interval: 30s
+      timeout: 30s
+      retries: 5
+      start_period: 30s
