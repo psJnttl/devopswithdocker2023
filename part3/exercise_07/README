@@ -1,0 +1,6 @@
+For frontend I used "alpine:3.17" image from Dockerhub. I also tried "node:alpine3.17" but that 
+resulted in much bigger image. Starting point with image "ubuntu:22.04" size is 566MB in Exercise 3.6.
+With "alpine:3.17" as base the image size is 518MB. I expected bigger delta than 48MB.
+
+For backend I went with "golang:alpine3.17" and got image size 498MB. Starting point from Exercise 3.6, 
+with base image "ubuntu:22.04" and size 661MB. Better yield than front end: 163MB.

@@ -1,0 +1,5 @@
+After some googling I found "busybox". I'd say in terms of reducing image size, mission accomplished:
+
+REPOSITORY   TAG       IMAGE ID       CREATED              SIZE
+front-end    latest    cf8de84373b3   About a minute ago   6.08MB
+

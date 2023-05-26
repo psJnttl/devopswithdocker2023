@@ -1,0 +1,11 @@
+Optimization through joining RUN commands has following results.
+
+Before:
+REPOSITORY   TAG       IMAGE ID       CREATED        SIZE
+back-end     latest    cbad8203a693   27 hours ago   794MB
+front-end    latest    00b14321c038   27 hours ago   681MB
+
+After:
+REPOSITORY   TAG       IMAGE ID       CREATED          SIZE
+front-end    latest    53d1da1b76ae   4 minutes ago    566MB
+back-end     latest    ff4955fd2f69   3 minutes ago    661MB

@@ -1,0 +1,5 @@
+Managed to drop the images size the required 25MB. Using "scratch" was possible since the golang 
+app is standalone.
+
+REPOSITORY   TAG       IMAGE ID       CREATED         SIZE
+back-end     latest    86a1b662ab70   2 minutes ago   18.6MB

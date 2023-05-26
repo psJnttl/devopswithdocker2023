@@ -1,0 +1,23 @@
+FROM alpine:3.17
+
+WORKDIR /tmp
+
+ENV NODE_OPTIONS=--openssl-legacy-provider
+
+# Install curl
+RUN apk add --no-cache curl && \
+    apk add --no-cache nodejs npm && \
+    apk add --no-cache git && \
+    git clone https://github.com/docker-hy/material-applications.git && \
+    cd /tmp/material-applications/example-frontend/ && npm install && npm update && \
+    cd /tmp/material-applications/example-frontend/ && npm run build && \
+    npm install -g serve && \
+    adduser -D appuser
+
+# Serve the app from port 5000
+EXPOSE 5000
+
+# User with lower privileges
+USER appuser
+
+ENTRYPOINT [ "serve", "-s", "-l", "5000", "./material-applications/example-frontend/build" ]

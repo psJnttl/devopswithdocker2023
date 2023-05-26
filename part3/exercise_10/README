@@ -1,0 +1,7 @@
+I took Dockerfile from exercise 1.7 and did all the optimizations I could think of. Using 
+Alpine instead of Ubuntu reduced the size considerably.
+
+REPOSITORY    TAG       IMAGE ID       CREATED          SIZE
+smaller       latest    37d34135fe1c   3 minutes ago    9.32MB
+exercise1_7   latest    3fa32a6be3d6   18 minutes ago   132MB
+
